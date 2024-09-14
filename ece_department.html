@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECE Department</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* background-image: url('eceback.jpg'); */
+      height: 100vh;
+      box-sizing: border-box;
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 80px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden; /* Clearfix for floated elements */
+    }
+    h2 {
+      text-align: center;
+    }
+    .department-info-container {
+      float: left;
+      width: calc(50% - 15px); /* 50% width with some margin */
+      margin-right: 30px;
+    }
+    .graph-container {
+      float: left;
+      width: calc(50% - 15px); /* 50% width with some margin */
+      margin-top: 20px;
+    }
+    .info-item {
+      margin-bottom: 10px;
+    }
+    img{
+      z-index: -111;
+      position: absolute;
+      inset: 0;
+      opacity: 0.4;
+      width: 100%;
+      height:fit-content;
+    }
+  </style>
+</head>
+<body>
+  <img src="./eceback.jpg">
+  <div class="container">
+    <h2>Electrical Communication Engineering</h2>
+    <div class="department-info-container">
+      <div class="info-item">
+        <h3>Total Students</h3>
+        <p id="totalStudents">150</p>
+      </div>
+      <div class="info-item">
+        <h3>Placed Students</h3>
+        <p id="placedStudents">120</p>
+      </div>
+      <div class="info-item">
+        <h3>Not Placed Students</h3>
+        <p id="notPlacedStudents">30</p>
+      </div>
+      <div class="info-item">
+        <h3>Average Package</h3>
+        <p id="averagePackage">₹70,000</p>
+      </div>
+    </div>
+    <div class="graph-container">
+      <canvas id="departmentChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <!-- Include Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Include ece.js -->
+  <script src="ece.js"></script>
+</body>
+</html>

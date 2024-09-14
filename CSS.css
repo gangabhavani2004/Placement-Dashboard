@@ -1,0 +1,57 @@
+body {
+
+  /*background-image: url("https://e0.pxfuel.com/wallpapers/324/864/desktop-wallpaper-adventures-of-a-girl-named-lauren-graduation-day.jpg");*/
+  background-image: url("https://www.usnews.com/object/image/00000179-a8bd-df6c-a97d-bfff6e2f0000/210526-graduation-stock.jpg?update-time=1622033753815&size=responsive640"); 
+  background-size:cover; /* Cover the entire viewport */
+  background-position: center; /* Center the background image */
+  font-family:'Times New Roman', Times, serif, sans-serif;
+  text-align: center;
+   /* Adjust margin-top to position the dropdown */
+  margin-bottom: 250px;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+}
+
+select {
+ 
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-family:'Times New Roman', Times, serif, sans-serif;
+  /*margin-bottom: 300px;*/
+  padding: 10px;
+  font-size: 20px; /* Increased font size for dropdown */
+  background-color: rgb(58, 229, 241);
+  color: rgb(6, 6, 6);
+  margin: 10px 0;
+
+}
+
+h1 {
+  color:black;
+  margin-bottom: 20px; /* Adjusted margin for spacing */
+  font-size: 2em; /* Adjusted font size */
+}
+
+button {
+  padding: 10px 10px;
+  font-size: 20px; /* Increased font size for buttons */
+  font-family:'Times New Roman', Times, serif, sans-serif;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d935e8;
+  color: rgb(12, 12, 12);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover {
+  background-color:darkkhaki;
+}

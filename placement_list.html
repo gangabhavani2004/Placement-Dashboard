@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .department-details {
+            text-align: center;
+        }
+
+        .department-images {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .department {
+            margin: 0 10px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .department img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .department p {
+            margin: 0;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px; /* Adjust padding as needed */
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s ease; /* Smooth transition */
+            width: 1218px;
+        }
+
+        /* Hover effect */
+        button:hover {
+            background-color: #b300b0; /* Darker background color on hover */
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>Placement List</h1>
+
+    <!-- List of Placements -->
+    <table id="placement-table">
+        <tr>
+            <th>Student Name</th>
+            <th>Roll Number</th>
+            <th>Company Placed</th>
+            <th>Company Registered</th>
+            <th>Package</th>
+        </tr>
+        <tr>
+            <td>venkata gopi</td>
+            <td>211801380038</td>
+            <td>CTS</td>
+            <td>CTS</td>
+            <td>60,000</td>
+        </tr>
+        <!-- Add more rows for other placements -->
+    </table><br>
+    <!-- <button>Add</button> -->
+    <button onclick="redirectToForm()" style="width: 1100px;">Add</button>
+    <button onclick="redirect()" style="width: 1100px;">View</button>
+
+
+    <script>
+        function redirectToForm() {
+            window.location.href = 'add_placement_form.html';
+        }
+        
+        function redirect() {
+            window.location.href = 'retrieve_data.php';
+        }
+        
+    </script>
+    <!-- Department-wise Placement Details Section -->
+    <!-- <div class="section">
+        <h2>Department-wise Placement Details</h2>
+        <div class="department-details">
+            <p>Select a department to view placement details.</p>
+            <div class="department-images">
+                <div class="department">
+                    <img src="bba_image.webp" alt="BBA Department" onclick="showDepartmentDetails('bba')" height="300px">
+                    <p>BBA Department</p>
+                </div>
+                <div class="department">
+                    <img src="cse_image.jpg" alt="Engineering Department" onclick="showDepartmentDetails('engineering')" height="300px">
+                    <p>Engineering Department</p>
+                </div>
+            </div>
+            <div class="department-images">
+                <div class="department">
+                    <img src="forensic_image.jpg" alt="Forensic Department" onclick="showDepartmentDetails('forensic')">
+                    <p>Forensic Department</p>
+                </div>
+                <div class="department">
+                    <img src="ece_image.jpeg" alt="ECE Department" onclick="showDepartmentDetails('ece')" height="345px" >
+                    <p>ECE Department</p>
+                </div>
+            </div>
+            <div class="department-images">
+                <div class="department">
+                    <img src="radiology_image.jpg" alt="Radiology Department" onclick="showDepartmentDetails('radiology')">
+                    <p>Radiology Department</p>
+                </div>
+                <div class="department">
+                    <img src="optometry_image.jpeg" alt="Optometry Department" onclick="showDepartmentDetails('optometry')" height="350px">
+                    <p>Optometry Department</p>
+                </div>
+            </div>
+            <div class="department-images">
+                <div class="department">
+                    <img src="anesthesia_image.jpg" alt="Anesthesia Department" onclick="showDepartmentDetails('anesthesia')" height="330px">
+                    <p>Anesthesia Department</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+</body>
+</html>

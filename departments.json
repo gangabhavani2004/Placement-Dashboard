@@ -1,0 +1,39 @@
+{
+    "CSE": {
+      "totalStudents": 200,
+      "placedStudents": 180,
+      "notPlacedStudents": 20,
+      "averagePackage": 80000
+    },
+    "ECE": {
+      "totalStudents": 180,
+      "placedStudents": 160,
+      "notPlacedStudents": 20,
+      "averagePackage": 75000
+    },
+    "Mechanical": {
+      "totalStudents": 220,
+      "placedStudents": 200,
+      "notPlacedStudents": 20,
+      "averagePackage": 85000
+    },
+    "Radiology": {
+      "totalStudents": 150,
+      "placedStudents": 130,
+      "notPlacedStudents": 20,
+      "averagePackage": 70000
+    },
+    "Anesthesia": {
+      "totalStudents": 120,
+      "placedStudents": 100,
+      "notPlacedStudents": 20,
+      "averagePackage": 65000
+    },
+    "Optometry": {
+      "totalStudents": 100,
+      "placedStudents": 80,
+      "notPlacedStudents": 20,
+      "averagePackage": 60000
+    }
+  }
+  

@@ -1,0 +1,20 @@
+[
+  {
+    "totalStudents": 100,
+    "placedStudents": 70,
+    "notPlacedStudents": 30,
+    "averagePackage": 500000
+  },
+  {
+    "totalStudents": 150,
+    "placedStudents": 100,
+    "notPlacedStudents": 50,
+    "averagePackage": 600000
+  },
+  {
+    "totalStudents": 200,
+    "placedStudents": 175,
+    "notPlacedStudents": 25,
+    "averagePackage": 700000
+  }
+]

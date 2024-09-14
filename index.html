@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Selection</title>
+<style>
+  body {
+
+    
+    background-image: url("https://e0.pxfuel.com/wallpapers/324/864/desktop-wallpaper-adventures-of-a-girl-named-lauren-graduation-day.jpg");
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .buttons-container {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  button:hover {
+    background-color: #dcc61f;
+  }
+</style>
+</head>
+
+<body>
+
+<h1 style="color: #dcc61f;">Select Your Role</h1>
+
+<div class="buttons-container">
+  <button id="adminButton">Admin</button>
+  <button id="userButton">User</button>
+</div>
+
+<script>
+  // JavaScript to handle button clicks
+  document.getElementById("adminButton").addEventListener("click", function() {
+    alert("You clicked Admin button");
+    // Redirect to admin page if needed
+    // window.location.href = "admin.html";
+  });
+
+  document.getElementById("userButton").addEventListener("click", function() {
+    alert("You clicked User button");
+    // Redirect to user page if needed
+    // window.location.href = "user.html";
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Selection</title>
+
+</head>
+<body>
+    
+      
+
+<h1 style="color: white;" ><b>Welcome To Placement Dashboard</b></h1>
+<select id="roleDropdown">
+  <option >Select Your Role</option>
+  <option value="admin">Admin</option>
+  <option value="user">User</option>
+</select>
+
+<br><br>
+
+<div id="buttonContainer"></div>
+
+<script>
+  // JavaScript to handle dropdown change
+  document.getElementById("roleDropdown").addEventListener("change", function() {
+    var selectedRole = this.value;
+    var buttonContainer = document.getElementById("buttonContainer");
+    
+    // Clear previous buttons
+    buttonContainer.innerHTML = "";
+    
+    // Create buttons based on selected role
+    if (selectedRole === "admin") {
+      var adminButton = document.createElement("button");
+      adminButton.textContent = "Admin";
+      adminButton.addEventListener("click", function() {
+        alert("You clicked Admin button");
+        // Redirect to admin page if needed
+        // window.location.href = "admin.html";
+      });
+      buttonContainer.appendChild(adminButton);
+    } else if (selectedRole === "user") {
+      var userButton = document.createElement("button");
+      userButton.textContent = "User";
+      userButton.addEventListener("click", function() {
+        alert("You clicked User button");
+        // Redirect to user page if needed
+        // window.location.href = "user.html";
+      });
+      buttonContainer.appendChild(userButton);
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+//User.js
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Fetch form values
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  // Here, you can add your login logic, such as AJAX requests to a server for authentication
+  // For demonstration purposes, let's just log the values
+  console.log("Email:", email);
+  console.log("Password:", password);
+
+  // After successful login, you can redirect the user to another page
+  // window.location.href = "dashboard.html";
+});

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Placement</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e5e9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgb(242, 242, 242);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(12, 249, 20, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: rgb(11, 11, 11);
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-bottom: 5px;
+            color: rgb(12, 12, 12);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+        }
+        button[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./centurion logo.png" class="logo" width="200" height="150">
+        <h1>Add Placement</h1>
+        <form id="add-placement-form" action="add_placement.php" method="post">
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name" name="student_name" required>
+
+            <label for="roll-number">Roll Number:</label>
+            <input type="text" id="roll-number" name="roll_number" required>
+
+            <label for="company-placed">Company Placed:</label>
+            <input type="text" id="company-placed" name="company_placed" required>
+
+            <label for="company-registered">Company Registered:</label>
+            <input type="text" id="company-registered" name="company_registered" required>
+
+            <label for="package">Package:</label>
+            <input type="text" id="package" name="package" required>
+
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- <script>
+        document.getElementById('add-placement-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Get form data
+            const formData = new FormData(event.target);
+            const studentName = formData.get('student_name');
+            const rollNumber = formData.get('roll_number');
+            const companyPlaced = formData.get('company_placed');
+            const companyRegistered = formData.get('company_registered');
+            const package = formData.get('package');
+            // Construct table row
+            const tableRow = `
+                <tr>
+                    <td>${studentName}</td>
+                    <td>${rollNumber}</td>
+                    <td>${companyPlaced}</td>
+                    <td>${companyRegistered}</td>
+                    <td>${package}</td>
+                </tr>`;
+            // Append row to placement table
+            const placementTable = document.getElementById('placement-table');
+            placementTable.innerHTML += tableRow;
+            // Simulating form submission success message
+            alert('Placement data successfully added!');
+            // Clear form fields
+            event.target.reset();
+        });
+    </script> -->
+</body>
+</html>

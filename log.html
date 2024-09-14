@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('login_back.jpg');
+      height: 100vh;
+      background-size: cover;
+      background-position: center; 
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: transparent;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(170, 212, 232, 0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    input[type="email"], input[type="password"], select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: transparent; /* Changed to transparent */
+      color: #007bff; /* Changed text color to blue */
+      border: 2px solid #007bff; /* Added border */
+      border-radius: 25px;
+      cursor: pointer;
+      display: inline-block;
+      width: 48%;
+      margin-right: 4px;
+      font-size: 14px; /* Adjust font size */
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: black; /* Black background on hover */
+      color: white; /* Change text color to white on hover */
+    }
+    button:focus {
+      outline: none;
+    }
+    button:active {
+      transform: translateY(1px);
+      background-color: black; /* Black background when pressed */
+      color: white; /* Change text color to white when pressed */
+    }
+    marquee {
+      font-size: 18px; /* Increase font size */
+      background-color: rgba(255, 255, 255, 0.8); /* Background color with opacity */
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <marquee behavior="scroll" direction="left">Centurion University of Technology and Management, Andhra Pradesh</marquee>
+  <div class="container">
+    <img src="logo.webp" alt="Logo" style="width: 100px; height: auto; display: block; margin: 0 auto 20px;">
+    <div id="loginButtons">
+      <button onclick="showLoginForm()">Login</button>
+      <button onclick="showRegisterForm()">Sign Up</button>
+    </div>
+    <div id="loginForm" style="display: none;">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="loginUserType">Select User Type:</label>
+        <select id="loginUserType">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="username">Email:</label>
+        <input type="email" id="username" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <div id="wrongPasswordMessage" style="display:none; color:red;">Incorrect email or password.</div>
+      </div>
+      <div class="form-group">
+        <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+      </div>
+      <button onclick="login()">Login</button>
+    </div>
+    <div id="registerForm" style="display: none;">
+      <h2>Sign Up</h2>
+      <div class="form-group">
+        <label for="registerUserType">Select User Type:</label>
+        <select id="registerUserType">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="newEmail">Email:</label>
+        <input type="email" id="newEmail" placeholder="Enter your email">
+        <div id="existingEmailMessage" style="display:none; color:red;">An account already exists with this email.</div>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" placeholder="Choose a password">
+      </div>
+      <button onclick="register()">Sign Up</button>
+      <div id="registrationSuccessMessage" style="display:none; color:green;">Sign Up successful. Please login.</div>
+    </div>
+  </div>
+
+  <script>
+    var existingEmails = []; // Array to store existing emails
+
+    function showLoginForm() {
+      document.getElementById('loginButtons').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registerForm').style.display = 'none';
+      document.getElementById('wrongPasswordMessage').style.display = 'none'; // Hide wrong password message
+    }
+
+    function showRegisterForm() {
+      document.getElementById('loginButtons').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'block';
+      document.getElementById('existingEmailMessage').style.display = 'none'; // Hide existing email message
+      document.getElementById('registrationSuccessMessage').style.display = 'none'; // Hide registration success message
+    }
+
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var userType = document.getElementById('loginUserType').value;
+
+      // For demonstration, let's assume any login is successful
+      // Redirect to inside page after login
+      window.location.href = "inside_page.html";
+    }
+
+    function forgotPassword() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('forgotPasswordForm').style.display = 'block';
+    }
+
+    function register() {
+      var newEmail = document.getElementById('newEmail').value;
+      var newPassword = document.getElementById('newPassword').value;
+      var userType = document.getElementById('registerUserType').value;
+
+      // Check if email already exists (This should ideally be done on the server side)
+      if (existingEmails.includes(newEmail)) {
+        // Show message that an account already exists with this email
+        document.getElementById('existingEmailMessage').style.display = 'block';
+        document.getElementById('registrationSuccessMessage').style.display = 'none'; // Hide registration success message
+        return; // Stop further execution
+      }
+
+      // Add new email to existing emails array
+      existingEmails.push(newEmail);
+
+      // Implement registration functionality based on email, password, and user type
+      // For demonstration, let's assume registration is successful
+      document.getElementById('registerForm').style.display = 'none'; // Hide registration form
+      document.getElementById('registrationSuccessMessage').style.display = 'block'; // Show registration success message
+      document.getElementById('loginButtons').style.display = 'block'; // Show login buttons
+      document.getElementById('loginForm').style.display = 'block'; // Show login form
+      document.getElementById('registerUserType').selectedIndex = 0; // Reset register user type
+      document.getElementById('newEmail').value = ''; // Clear new email input
+      document.getElementById('newPassword').value = ''; // Clear new password input
+    }
+  </script>
+</body>
+</html>
